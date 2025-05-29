@@ -7529,6 +7529,7 @@ a.anchor-link {
 <li>Missing values in columns like <code>name</code>.</li>
 <li>Invalid dog names (e.g., "a", "the").</li>
 <li>Out-of-range values in <code>rating_numerator</code>.</li>
+<li>Values in <code>rating_denominator</code> that were not equal to 10.</li>
 <li>Non-standard data types for <code>IDs</code> and <code>timestamps</code>.</li>
 <li>Rows in the image predictions dataset not classified as dogs.</li>
 <li>A row with an invalid prediction confidence ratio (<code>1</code>).</li>
@@ -7536,7 +7537,6 @@ a.anchor-link {
 </li>
 <li><strong>Tidiness Issues</strong>:<ul>
 <li>Dog stages distributed across multiple columns (<code>doggo</code>, <code>floofer</code>, etc.).</li>
-<li>The <code>rating_denominator</code> column does not measure a variable.</li>
 <li>The three datasets needed merging for analysis.</li>
 </ul>
 </li>
@@ -7548,12 +7548,12 @@ a.anchor-link {
 <li>Removed retweets and replies to focus on original tweets.</li>
 <li>Replaced missing or invalid dog names with "Unknown."</li>
 <li>Removed out-of-range <code>rating_numerator</code> values (set a max of 17).</li>
+<li>Ensured <code>rating_denominator</code> values were all equal to 10.</li>
 <li>Filtered out rows not classified as dogs and the invalid prediction confidence ratio.</li>
 </ul>
 </li>
 <li><strong>Tidiness Fixes</strong>:<ul>
 <li>Merged dog stages into a single column.</li>
-<li>Dropped the <code>rating_denominator</code> column as it was redundant.</li>
 <li>Combined the three datasets into one for easier analysis.</li>
 </ul>
 </li>
